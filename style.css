@@ -724,6 +724,10 @@ h2 {
         min-height: 250px;
     }
 
+    .wwu-img-2 {
+        display: none;
+    }
+
     .wwu-benefits {
         grid-template-columns: 1fr;
     }
@@ -1076,23 +1080,37 @@ h2 {
     .nav-menu {
         display: none;
         position: fixed;
-        top: 72px;
+        top: 0;
         left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(10, 10, 10, 0.98);
+        width: 100vw;
+        height: 100vh;
+        background: #0a0a0a;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 2rem;
+        z-index: 9999;
     }
 
     .nav-menu.active {
         display: flex;
     }
 
+    .nav-menu a {
+        font-size: 1.3rem;
+        color: var(--white);
+    }
+
+    .nav-cta {
+        font-size: 1.3rem !important;
+        padding: 14px 36px !important;
+        margin-top: 1rem;
+    }
+
     .hamburger {
         display: flex;
+        z-index: 10000;
+        position: relative;
     }
 
     .hamburger.active span:nth-child(1) {
