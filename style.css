@@ -109,6 +109,8 @@ h2 {
     justify-content: space-between;
     align-items: center;
     height: 72px;
+    max-width: 100%;
+    padding: 0 32px;
 }
 
 .navbar-brand img {
@@ -122,6 +124,7 @@ h2 {
     list-style: none;
     align-items: center;
     gap: 2.5rem;
+    margin-left: auto;
 }
 
 .nav-menu a {
