@@ -114,7 +114,7 @@ h2 {
 }
 
 .navbar-brand img {
-    height: 40px;
+    height: 48px;
     width: auto;
     filter: brightness(0) invert(1);
 }
@@ -123,7 +123,7 @@ h2 {
     display: flex;
     list-style: none;
     align-items: center;
-    gap: 2.5rem;
+    gap: 1.8rem;
     margin-left: auto;
 }
 
@@ -1077,6 +1077,10 @@ h2 {
 }
 
 @media (max-width: 768px) {
+    .navbar-brand img {
+        height: 42px;
+    }
+
     .nav-menu {
         display: none;
         position: fixed;
@@ -1088,7 +1092,8 @@ h2 {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 2rem;
+        gap: 1.8rem;
+        padding-bottom: 60px;
         z-index: 9999;
     }
 
