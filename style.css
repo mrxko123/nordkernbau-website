@@ -113,9 +113,14 @@ h2 {
     padding: 0 32px;
 }
 
+.navbar-brand {
+    flex-shrink: 0;
+}
+
 .navbar-brand img {
     height: 96px;
     width: auto;
+    max-width: none;
     filter: brightness(0) invert(1);
 }
 
@@ -1079,6 +1084,7 @@ h2 {
 @media (max-width: 768px) {
     .navbar-brand img {
         height: 70px;
+        max-width: none;
     }
 
     .nav-menu {
