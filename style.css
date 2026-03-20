@@ -118,9 +118,10 @@ h2 {
 }
 
 .navbar-brand img {
-    height: 96px;
-    width: auto;
-    max-width: none;
+    height: 96px !important;
+    width: auto !important;
+    max-width: none !important;
+    max-height: none !important;
     filter: brightness(0) invert(1);
 }
 
@@ -782,8 +783,9 @@ h2 {
 }
 
 .footer-logo {
-    height: 35px;
+    height: 60px;
     width: auto;
+    max-width: none;
     margin-bottom: 1rem;
     filter: brightness(0) invert(1);
 }
@@ -1083,8 +1085,8 @@ h2 {
 
 @media (max-width: 768px) {
     .navbar-brand img {
-        height: 70px;
-        max-width: none;
+        height: 70px !important;
+        max-width: none !important;
     }
 
     .nav-menu {
