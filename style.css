@@ -1085,6 +1085,7 @@ h2 {
 @media (max-width: 768px) {
     .navbar .container {
         height: 50px;
+        padding: 0 16px;
     }
 
     .navbar-brand img {
