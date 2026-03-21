@@ -120,7 +120,7 @@ h2 {
 }
 
 .navbar-brand img {
-    height: 38px !important;
+    height: 19px !important;
     width: auto !important;
     max-width: none !important;
     max-height: none !important;
@@ -924,7 +924,7 @@ h2 {
 }
 
 .footer-logo {
-    height: 50px;
+    height: 35px;
     width: auto;
     max-width: none;
     margin-bottom: 1rem;
@@ -1230,7 +1230,7 @@ h2 {
     }
 
     .navbar-brand img {
-        height: 30px !important;
+        height: 15px !important;
     }
 
     .nav-menu {
@@ -1319,7 +1319,7 @@ h2 {
     }
 
     .footer-logo {
-        height: 40px;
+        height: 28px;
     }
 
     .why-grid {
