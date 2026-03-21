@@ -1315,12 +1315,38 @@ h2 {
     }
 
     .gallery-masonry {
-        columns: 2;
-        column-gap: 10px;
+        columns: unset;
+        column-gap: unset;
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 12px;
+        padding-bottom: 16px;
+        scrollbar-width: none;
+    }
+
+    .gallery-masonry::-webkit-scrollbar {
+        display: none;
     }
 
     .gallery-card {
-        margin-bottom: 10px;
+        margin-bottom: 0;
+        flex: 0 0 85%;
+        scroll-snap-align: center;
+    }
+
+    .gallery-masonry.collapsed {
+        max-height: none;
+        overflow-x: auto;
+    }
+
+    .gallery-masonry.collapsed::after {
+        display: none;
+    }
+
+    .gallery-toggle {
+        display: none !important;
     }
 
     .lightbox-prev,
