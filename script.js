@@ -127,6 +127,22 @@ if (contactForm) {
     });
 }
 
+// ===== Gallery Scroll Animation =====
+const galleryObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+            setTimeout(() => {
+                entry.target.classList.add('visible');
+            }, i * 100);
+            galleryObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.gallery-card').forEach(card => {
+    galleryObserver.observe(card);
+});
+
 // ===== Gallery Toggle =====
 const galleryGrid = document.getElementById('galleryGrid');
 const galleryToggle = document.getElementById('galleryToggle');
