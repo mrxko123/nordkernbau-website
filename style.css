@@ -118,7 +118,7 @@ h2 {
 }
 
 .navbar-brand img {
-    height: 40px !important;
+    height: 50px !important;
     width: auto !important;
     max-width: none !important;
     max-height: none !important;
@@ -1089,7 +1089,7 @@ h2 {
     }
 
     .navbar-brand img {
-        height: 30px !important;
+        height: 38px !important;
         max-width: none !important;
     }
 
