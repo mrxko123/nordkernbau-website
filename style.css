@@ -108,7 +108,7 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 72px;
+    height: 56px;
     max-width: 100%;
     padding: 0 32px;
 }
@@ -1084,8 +1084,12 @@ h2 {
 }
 
 @media (max-width: 768px) {
+    .navbar .container {
+        height: 50px;
+    }
+
     .navbar-brand img {
-        height: 36px !important;
+        height: 30px !important;
         max-width: none !important;
     }
 
