@@ -108,7 +108,7 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 110px;
+    height: 72px;
     max-width: 100%;
     padding: 0 32px;
 }
@@ -118,7 +118,7 @@ h2 {
 }
 
 .navbar-brand img {
-    height: 96px !important;
+    height: 40px !important;
     width: auto !important;
     max-width: none !important;
     max-height: none !important;
@@ -1085,7 +1085,7 @@ h2 {
 
 @media (max-width: 768px) {
     .navbar-brand img {
-        height: 70px !important;
+        height: 36px !important;
         max-width: none !important;
     }
 
