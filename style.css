@@ -928,10 +928,11 @@ h2 {
 }
 
 .footer-logo {
-    height: 70px;
+    height: 180px;
     width: auto;
     max-width: none;
     margin-bottom: 1rem;
+    margin-left: -30px;
 }
 
 .footer-brand p {
@@ -1241,7 +1242,7 @@ h2 {
         height: 80px !important;
         max-width: none !important;
         margin-top: -8px !important;
-        margin-left: -8px !important;
+        margin-left: -14px !important;
     }
 
     .nav-menu {
@@ -1322,6 +1323,16 @@ h2 {
 
     .gallery-card {
         margin-bottom: 10px;
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+        display: none;
+    }
+
+    .footer-logo {
+        height: 130px;
+        margin-left: -20px;
     }
 
     .why-grid {
