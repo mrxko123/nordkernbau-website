@@ -128,6 +128,7 @@ h2 {
     max-height: none !important;
     object-fit: contain;
     margin-top: -10px;
+    margin-left: -12px;
 }
 
 .nav-menu {
@@ -592,11 +593,31 @@ h2 {
     transform: scale(1) rotate(0deg);
 }
 
-.gallery-hint {
-    text-align: center;
-    color: var(--text-muted);
-    margin-top: 2rem;
-    font-size: 0.9rem;
+.gallery-masonry.collapsed {
+    max-height: 700px;
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery-masonry.collapsed::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 150px;
+    background: linear-gradient(to top, var(--bg) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+.gallery-toggle {
+    display: block;
+    margin: 2rem auto 0;
+    padding: 12px 40px;
+}
+
+.gallery-toggle.hidden {
+    display: none;
 }
 
 /* ===== Lightbox ===== */
@@ -1220,6 +1241,7 @@ h2 {
         height: 80px !important;
         max-width: none !important;
         margin-top: -8px !important;
+        margin-left: -8px !important;
     }
 
     .nav-menu {

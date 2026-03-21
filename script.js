@@ -127,6 +127,31 @@ if (contactForm) {
     });
 }
 
+// ===== Gallery Toggle =====
+const galleryGrid = document.getElementById('galleryGrid');
+const galleryToggle = document.getElementById('galleryToggle');
+
+if (galleryGrid && galleryToggle) {
+    // Start collapsed if more than 6 items
+    const cardCount = galleryGrid.querySelectorAll('.gallery-card').length;
+    if (cardCount > 6) {
+        galleryGrid.classList.add('collapsed');
+    } else {
+        galleryToggle.classList.add('hidden');
+    }
+
+    galleryToggle.addEventListener('click', () => {
+        if (galleryGrid.classList.contains('collapsed')) {
+            galleryGrid.classList.remove('collapsed');
+            galleryToggle.textContent = 'Weniger anzeigen';
+        } else {
+            galleryGrid.classList.add('collapsed');
+            galleryToggle.textContent = 'Mehr anzeigen';
+            galleryGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    });
+}
+
 // ===== Lightbox Gallery =====
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightboxImg');
