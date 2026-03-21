@@ -115,20 +115,16 @@ h2 {
 
 .navbar-brand {
     flex-shrink: 0;
-    height: 48px;
-    overflow: hidden;
     display: flex;
     align-items: center;
 }
 
 .navbar-brand img {
-    height: 110px !important;
+    height: 38px !important;
     width: auto !important;
     max-width: none !important;
     max-height: none !important;
     object-fit: contain;
-    margin-top: -18px;
-    margin-left: -16px;
 }
 
 .nav-menu {
@@ -928,11 +924,10 @@ h2 {
 }
 
 .footer-logo {
-    height: 180px;
+    height: 50px;
     width: auto;
     max-width: none;
     margin-bottom: 1rem;
-    margin-left: -30px;
 }
 
 .footer-brand p {
@@ -1234,15 +1229,8 @@ h2 {
         padding: 0 14px;
     }
 
-    .navbar-brand {
-        height: 42px;
-    }
-
     .navbar-brand img {
-        height: 90px !important;
-        max-width: none !important;
-        margin-top: -16px !important;
-        margin-left: -16px !important;
+        height: 30px !important;
     }
 
     .nav-menu {
@@ -1331,8 +1319,7 @@ h2 {
     }
 
     .footer-logo {
-        height: 130px;
-        margin-left: -20px;
+        height: 40px;
     }
 
     .why-grid {
