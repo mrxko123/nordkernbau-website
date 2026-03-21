@@ -106,50 +106,23 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // ===== Contact Form =====
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
+    // Check if returning from successful submission
+    if (window.location.search.includes('sent=1')) {
         const btn = contactForm.querySelector('.btn');
-        const originalText = btn.textContent;
+        if (btn) {
+            btn.textContent = 'Erfolgreich gesendet!';
+            btn.style.background = '#22c55e';
+            setTimeout(() => {
+                btn.textContent = 'Nachricht senden';
+                btn.style.background = '';
+            }, 5000);
+        }
+    }
+
+    contactForm.addEventListener('submit', (e) => {
+        const btn = contactForm.querySelector('.btn');
         btn.textContent = 'Wird gesendet...';
         btn.disabled = true;
-
-        const data = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            phone: document.getElementById('phone')?.value || '',
-            subject: document.getElementById('subject').value,
-            message: document.getElementById('message').value
-        };
-
-        try {
-            // Replace with your Formspree endpoint
-            const response = await fetch('https://formspree.io/f/xjkvwnea', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data)
-            });
-
-            if (response.ok) {
-                btn.textContent = 'Gesendet!';
-                btn.style.background = '#22c55e';
-                contactForm.reset();
-                setTimeout(() => {
-                    btn.textContent = originalText;
-                    btn.style.background = '';
-                    btn.disabled = false;
-                }, 3000);
-            } else {
-                throw new Error('Send failed');
-            }
-        } catch (error) {
-            btn.textContent = 'Fehler - Erneut versuchen';
-            btn.style.background = '#ef4444';
-            setTimeout(() => {
-                btn.textContent = originalText;
-                btn.style.background = '';
-                btn.disabled = false;
-            }, 3000);
-        }
+        // Form submits naturally via FormSubmit.co
     });
 }
