@@ -120,7 +120,7 @@ h2 {
 }
 
 .navbar-brand img {
-    height: 41px !important;
+    height: 47px !important;
     width: auto !important;
     max-width: none !important;
     max-height: none !important;
@@ -920,7 +920,7 @@ h2 {
 /* ===== Footer ===== */
 .footer {
     background: var(--black);
-    padding: 4rem 0 1.5rem;
+    padding: 1.5rem 0 1.5rem;
     border-top: 1px solid var(--border);
 }
 
@@ -932,7 +932,7 @@ h2 {
 }
 
 .footer-logo {
-    height: 58px;
+    height: 67px;
     width: auto;
     max-width: none;
     margin-bottom: 1rem;
