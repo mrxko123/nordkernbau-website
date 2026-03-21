@@ -162,34 +162,90 @@
                 <h2>Einblicke in unsere Arbeit</h2>
                 <p class="section-desc">Qualität, die man sieht — auf verschiedenen Baustellen in Deutschland.</p>
             </div>
-            <div class="gallery-grid">
-                <div class="gallery-item gallery-large">
-                    <img src="images/projekt-4.jpg" alt="Bewehrungsarbeiten auf der Baustelle">
-                    <div class="gallery-overlay">
-                        <span>Bewehrungsarbeiten</span>
+            <div class="gallery-masonry" id="galleryGrid">
+                <div class="gallery-card" data-category="bewehrung">
+                    <div class="gallery-card-inner">
+                        <img src="images/projekt-1.jpg" alt="Bewehrungsstahl Wand" loading="lazy">
+                        <div class="gallery-card-overlay">
+                            <div class="gallery-card-content">
+                                <span class="gallery-card-tag">Bewehrung</span>
+                                <h3>Wandbewehrung</h3>
+                            </div>
+                            <div class="gallery-card-zoom">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="images/projekt-1.jpg" alt="Bewehrungsstahl Wand">
-                    <div class="gallery-overlay">
-                        <span>Wandbewehrung</span>
+                <div class="gallery-card" data-category="stahlbeton">
+                    <div class="gallery-card-inner">
+                        <img src="images/projekt-2.jpg" alt="Stahlbetonkonstruktion" loading="lazy">
+                        <div class="gallery-card-overlay">
+                            <div class="gallery-card-content">
+                                <span class="gallery-card-tag">Stahlbeton</span>
+                                <h3>Stahlbetonkonstruktion</h3>
+                            </div>
+                            <div class="gallery-card-zoom">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="images/projekt-2.jpg" alt="Stahlbetonkonstruktion">
-                    <div class="gallery-overlay">
-                        <span>Stahlbetonkonstruktion</span>
+                <div class="gallery-card" data-category="fundament">
+                    <div class="gallery-card-inner">
+                        <img src="images/projekt-3.jpg" alt="Bodenplattenbewehrung" loading="lazy">
+                        <div class="gallery-card-overlay">
+                            <div class="gallery-card-content">
+                                <span class="gallery-card-tag">Fundament</span>
+                                <h3>Bodenplattenbewehrung</h3>
+                            </div>
+                            <div class="gallery-card-zoom">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="gallery-item gallery-wide">
-                    <img src="images/projekt-3.jpg" alt="Bodenplattenbewehrung">
-                    <div class="gallery-overlay">
-                        <span>Bodenplattenbewehrung</span>
+                <div class="gallery-card" data-category="bewehrung">
+                    <div class="gallery-card-inner">
+                        <img src="images/work-1.jpg" alt="Bewehrungsarbeiten" loading="lazy">
+                        <div class="gallery-card-overlay">
+                            <div class="gallery-card-content">
+                                <span class="gallery-card-tag">Bewehrung</span>
+                                <h3>Bewehrungsarbeiten</h3>
+                            </div>
+                            <div class="gallery-card-zoom">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-card" data-category="stahlbeton">
+                    <div class="gallery-card-inner">
+                        <img src="images/work-2.jpg" alt="Baustelle" loading="lazy">
+                        <div class="gallery-card-overlay">
+                            <div class="gallery-card-content">
+                                <span class="gallery-card-tag">Baustelle</span>
+                                <h3>Baustellenarbeit</h3>
+                            </div>
+                            <div class="gallery-card-zoom">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+            <p class="gallery-hint">Weitere Bilder folgen in Kürze.</p>
         </div>
     </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose">&times;</button>
+        <button class="lightbox-prev" id="lightboxPrev">&#10094;</button>
+        <button class="lightbox-next" id="lightboxNext">&#10095;</button>
+        <img src="" alt="" id="lightboxImg">
+        <div class="lightbox-counter" id="lightboxCounter"></div>
+    </div>
 
     <!-- Full-width Image Banner -->
     <section class="image-banner">
