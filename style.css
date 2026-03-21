@@ -934,7 +934,8 @@ h2 {
 }
 
 .footer-logo {
-    height: 67px;
+    height: auto;
+    width: 280px;
     width: auto;
     max-width: none;
     margin-bottom: 1rem;
