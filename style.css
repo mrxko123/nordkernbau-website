@@ -115,20 +115,20 @@ h2 {
 
 .navbar-brand {
     flex-shrink: 0;
-    height: 44px;
+    height: 48px;
     overflow: hidden;
     display: flex;
     align-items: center;
 }
 
 .navbar-brand img {
-    height: 100px !important;
+    height: 110px !important;
     width: auto !important;
     max-width: none !important;
     max-height: none !important;
     object-fit: contain;
-    margin-top: -10px;
-    margin-left: -12px;
+    margin-top: -18px;
+    margin-left: -16px;
 }
 
 .nav-menu {
@@ -1235,14 +1235,14 @@ h2 {
     }
 
     .navbar-brand {
-        height: 36px;
+        height: 42px;
     }
 
     .navbar-brand img {
-        height: 80px !important;
+        height: 90px !important;
         max-width: none !important;
-        margin-top: -8px !important;
-        margin-left: -14px !important;
+        margin-top: -16px !important;
+        margin-left: -16px !important;
     }
 
     .nav-menu {
