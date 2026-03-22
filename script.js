@@ -254,3 +254,16 @@ if (lightbox) {
         }
     }, { passive: true });
 }
+
+// Hide scroll overlay on gallery scroll
+const galleryScrollOverlay = document.getElementById('galleryScrollOverlay');
+if (galleryGrid && galleryScrollOverlay) {
+    galleryGrid.addEventListener('scroll', () => {
+        if (galleryGrid.scrollLeft > 30) {
+            galleryScrollOverlay.style.opacity = '0';
+            galleryScrollOverlay.style.transition = 'opacity 0.4s ease';
+        } else {
+            galleryScrollOverlay.style.opacity = '1';
+        }
+    }, { passive: true });
+}

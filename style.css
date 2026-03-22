@@ -497,6 +497,39 @@ h2 {
     background: var(--bg);
 }
 
+.gallery-wrapper {
+    position: relative;
+}
+
+.gallery-scroll-overlay {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    background: linear-gradient(to left, rgba(0,0,0,0.7) 0%, transparent 100%);
+    z-index: 5;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: rgba(255,255,255,0.7);
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+    font-weight: 500;
+    pointer-events: none;
+}
+
+.gallery-scroll-overlay svg {
+    animation: hintArrow 1.5s ease-in-out infinite;
+}
+
+@keyframes hintArrow {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(6px); }
+}
+
 .gallery-grid-fixed {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1280,6 +1313,10 @@ h2 {
 
     .services-grid {
         grid-template-columns: 1fr;
+    }
+
+    .gallery-scroll-overlay {
+        display: flex;
     }
 
     .gallery-grid-fixed {
