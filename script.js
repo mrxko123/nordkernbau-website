@@ -128,20 +128,29 @@ if (contactForm) {
 }
 
 // ===== Gallery Scroll Animation =====
-const galleryObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-            setTimeout(() => {
-                entry.target.classList.add('visible');
-            }, i * 100);
-            galleryObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.1 });
+const isMobile = window.innerWidth <= 768;
 
-document.querySelectorAll('.gallery-item').forEach(card => {
-    galleryObserver.observe(card);
-});
+if (isMobile) {
+    // On mobile, make all gallery items visible immediately (horizontal scroll)
+    document.querySelectorAll('.gallery-item').forEach(card => {
+        card.classList.add('visible');
+    });
+} else {
+    const galleryObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, i * 100);
+                galleryObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.05, rootMargin: '100px 0px' });
+
+    document.querySelectorAll('.gallery-item').forEach(card => {
+        galleryObserver.observe(card);
+    });
+}
 
 // ===== Gallery Toggle =====
 const galleryGrid = document.getElementById('galleryGrid');
@@ -159,6 +168,14 @@ if (galleryGrid && galleryToggle) {
         if (!galleryGrid.classList.contains('expanded')) {
             galleryGrid.classList.add('expanded');
             galleryToggle.textContent = 'Weniger anzeigen';
+            // Make all hidden gallery items visible immediately
+            galleryGrid.querySelectorAll('.gallery-item').forEach((item, i) => {
+                if (!item.classList.contains('visible')) {
+                    setTimeout(() => {
+                        item.classList.add('visible');
+                    }, i * 60);
+                }
+            });
         } else {
             galleryGrid.classList.remove('expanded');
             galleryToggle.textContent = 'Mehr anzeigen';
@@ -177,14 +194,41 @@ const lightboxCounter = document.getElementById('lightboxCounter');
 const galleryCards = document.querySelectorAll('.gallery-item');
 
 let currentIndex = 0;
-const galleryImages = [];
+let galleryImages = [];
 
-galleryCards.forEach((card, index) => {
+function getVisibleGalleryImages() {
+    const images = [];
+    const grid = document.getElementById('galleryGrid');
+    const isExpanded = grid && grid.classList.contains('expanded');
+
+    galleryCards.forEach((card) => {
+        const img = card.querySelector('img');
+        if (!img) return;
+
+        if (isExpanded) {
+            images.push(img.src);
+        } else {
+            // Only include images that are actually visible (not hidden by overflow)
+            const cardRect = card.getBoundingClientRect();
+            const gridRect = grid ? grid.getBoundingClientRect() : null;
+            if (gridRect && cardRect.top < gridRect.bottom) {
+                images.push(img.src);
+            } else if (!gridRect) {
+                images.push(img.src);
+            }
+        }
+    });
+    return images;
+}
+
+galleryCards.forEach((card) => {
     const img = card.querySelector('img');
     if (img) {
-        galleryImages.push(img.src);
         card.addEventListener('click', () => {
-            currentIndex = index;
+            galleryImages = getVisibleGalleryImages();
+            const clickedSrc = img.src;
+            currentIndex = galleryImages.indexOf(clickedSrc);
+            if (currentIndex === -1) currentIndex = 0;
             openLightbox();
         });
     }
