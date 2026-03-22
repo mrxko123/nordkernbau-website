@@ -139,7 +139,7 @@ const galleryObserver = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('.gallery-card').forEach(card => {
+document.querySelectorAll('.gallery-item').forEach(card => {
     galleryObserver.observe(card);
 });
 
@@ -148,20 +148,19 @@ const galleryGrid = document.getElementById('galleryGrid');
 const galleryToggle = document.getElementById('galleryToggle');
 
 if (galleryGrid && galleryToggle) {
-    // Start collapsed if more than 6 items
-    const cardCount = galleryGrid.querySelectorAll('.gallery-card').length;
-    if (cardCount > 6) {
-        galleryGrid.classList.add('collapsed');
+    const cardCount = galleryGrid.querySelectorAll('.gallery-item').length;
+    if (cardCount > 9) {
+        // collapsed by default on desktop
     } else {
         galleryToggle.classList.add('hidden');
     }
 
     galleryToggle.addEventListener('click', () => {
-        if (galleryGrid.classList.contains('collapsed')) {
-            galleryGrid.classList.remove('collapsed');
+        if (!galleryGrid.classList.contains('expanded')) {
+            galleryGrid.classList.add('expanded');
             galleryToggle.textContent = 'Weniger anzeigen';
         } else {
-            galleryGrid.classList.add('collapsed');
+            galleryGrid.classList.remove('expanded');
             galleryToggle.textContent = 'Mehr anzeigen';
             galleryGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
@@ -175,7 +174,7 @@ const lightboxClose = document.getElementById('lightboxClose');
 const lightboxPrev = document.getElementById('lightboxPrev');
 const lightboxNext = document.getElementById('lightboxNext');
 const lightboxCounter = document.getElementById('lightboxCounter');
-const galleryCards = document.querySelectorAll('.gallery-card');
+const galleryCards = document.querySelectorAll('.gallery-item');
 
 let currentIndex = 0;
 const galleryImages = [];
