@@ -196,26 +196,12 @@ const galleryCards = document.querySelectorAll('.gallery-item');
 let currentIndex = 0;
 let galleryImages = [];
 
-function getVisibleGalleryImages() {
+function getAllGalleryImages() {
     const images = [];
-    const grid = document.getElementById('galleryGrid');
-    const isExpanded = grid && grid.classList.contains('expanded');
-
     galleryCards.forEach((card) => {
         const img = card.querySelector('img');
-        if (!img) return;
-
-        if (isExpanded) {
+        if (img) {
             images.push(img.src);
-        } else {
-            // Only include images that are actually visible (not hidden by overflow)
-            const cardRect = card.getBoundingClientRect();
-            const gridRect = grid ? grid.getBoundingClientRect() : null;
-            if (gridRect && cardRect.top < gridRect.bottom) {
-                images.push(img.src);
-            } else if (!gridRect) {
-                images.push(img.src);
-            }
         }
     });
     return images;
@@ -225,7 +211,7 @@ galleryCards.forEach((card) => {
     const img = card.querySelector('img');
     if (img) {
         card.addEventListener('click', () => {
-            galleryImages = getVisibleGalleryImages();
+            galleryImages = getAllGalleryImages();
             const clickedSrc = img.src;
             currentIndex = galleryImages.indexOf(clickedSrc);
             if (currentIndex === -1) currentIndex = 0;
