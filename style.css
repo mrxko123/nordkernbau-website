@@ -806,6 +806,11 @@ h2 {
     align-items: center;
 }
 
+.wwu-grid-no-images {
+    grid-template-columns: 1fr;
+    max-width: 700px;
+}
+
 .wwu-images {
     display: grid;
     grid-template-columns: 1fr 1fr;
