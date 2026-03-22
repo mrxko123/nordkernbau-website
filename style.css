@@ -762,6 +762,18 @@ h2 {
     transition: all 0.4s ease;
 }
 
+.why-card-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.why-logo-img {
+    width: 60%;
+    height: auto;
+    opacity: 0.9;
+}
+
 .why-card:hover {
     border-color: rgba(192, 39, 45, 0.3);
     transform: translateY(-4px);
