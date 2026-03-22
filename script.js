@@ -198,23 +198,23 @@ let galleryImages = [];
 
 function getAllGalleryImages() {
     const images = [];
-    galleryCards.forEach((card) => {
-        const img = card.querySelector('img');
-        if (img) {
-            images.push(img.src);
+    document.querySelectorAll('.gallery-item img').forEach((img) => {
+        const src = img.getAttribute('src');
+        if (src) {
+            // Build full URL from relative path
+            const fullSrc = new URL(src, window.location.href).href;
+            images.push(fullSrc);
         }
     });
     return images;
 }
 
-galleryCards.forEach((card) => {
+galleryCards.forEach((card, index) => {
     const img = card.querySelector('img');
     if (img) {
         card.addEventListener('click', () => {
             galleryImages = getAllGalleryImages();
-            const clickedSrc = img.src;
-            currentIndex = galleryImages.indexOf(clickedSrc);
-            if (currentIndex === -1) currentIndex = 0;
+            currentIndex = index;
             openLightbox();
         });
     }
