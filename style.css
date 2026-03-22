@@ -499,6 +499,7 @@ h2 {
 
 .gallery-wrapper {
     position: relative;
+    overflow: hidden;
 }
 
 .gallery-scroll-overlay {
@@ -515,14 +516,15 @@ h2 {
     justify-content: center;
     gap: 8px;
     color: rgba(255,255,255,0.7);
-    font-size: 0.65rem;
+    font-size: 0.6rem;
     letter-spacing: 3px;
-    font-weight: 500;
+    font-weight: 300;
     pointer-events: none;
 }
 
-.gallery-scroll-overlay svg {
+.gallery-scroll-overlay .scroll-arrow {
     animation: hintArrow 1.5s ease-in-out infinite;
+    opacity: 0.7;
 }
 
 @keyframes hintArrow {
