@@ -192,6 +192,7 @@ galleryCards.forEach((card, index) => {
 
 function openLightbox() {
     if (!lightbox) return;
+    lightboxImg.className = '';
     lightboxImg.src = galleryImages[currentIndex];
     lightboxCounter.textContent = `${currentIndex + 1} / ${galleryImages.length}`;
     lightbox.classList.add('active');
@@ -206,12 +207,14 @@ function closeLightbox() {
 
 function nextImage() {
     currentIndex = (currentIndex + 1) % galleryImages.length;
+    lightboxImg.className = 'lightbox-slide-left';
     lightboxImg.src = galleryImages[currentIndex];
     lightboxCounter.textContent = `${currentIndex + 1} / ${galleryImages.length}`;
 }
 
 function prevImage() {
     currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+    lightboxImg.className = 'lightbox-slide-right';
     lightboxImg.src = galleryImages[currentIndex];
     lightboxCounter.textContent = `${currentIndex + 1} / ${galleryImages.length}`;
 }
