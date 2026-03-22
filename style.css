@@ -947,8 +947,8 @@ h2 {
 
 .footer-logo {
     height: auto;
-    width: 266px;
-    max-width: 266px;
+    width: 100%;
+    max-width: 250px;
     margin-bottom: 1rem;
 }
 
@@ -1367,7 +1367,9 @@ h2 {
     }
 
     .footer-logo {
-        height: 46px;
+        height: auto;
+        width: 140px;
+        max-width: 140px;
     }
 
     .why-grid {
